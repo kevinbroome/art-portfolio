@@ -3,19 +3,192 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Name Art</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Kevin Broome Art</title>
+    <meta
+      name="description"
+      content="A one-page art portfolio for Kevin Broome."
+    />
   </head>
   <body>
-    <main>
-      <h1>Your Name</h1>
-      <p>Modern neo-expressionist digital artwork.</p>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Kevin Broome Art home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Kevin Broome</span>
+        </a>
 
-      <section class="gallery">
-        <img src="images/art-01.jpg" alt="Artwork 1" />
-        <img src="images/art-02.jpg" alt="Artwork 2" />
-        <img src="images/art-03.jpg" alt="Artwork 3" />
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="page-section hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Modern neo-expressionism</p>
+          <h1 id="hero-title">Art with teeth.</h1>
+          <p class="hero-copy">
+            Distorted figures, raw colour, nervous energy, and digital brushwork
+            shaped into strange little emotional crimes.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View work</a>
+            <a class="button" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Featured artwork">
+          <article class="feature-card">
+            <img
+              src="images/art-01.jpg"
+              alt="Featured neo-expressionist artwork"
+            />
+            <div class="feature-label">
+              <strong>Featured piece</strong>
+              <span>Replace this with your artwork title.</span>
+            </div>
+          </article>
+
+          <div class="floating-note">
+            <b>Digital portfolio</b><br />
+            Selected works, studies, commissions, and the occasional beautiful
+            accident.
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="page-section" aria-labelledby="work-title">
+        <div class="section-heading">
+          <h2 id="work-title">Selected work</h2>
+          <p>
+            A small gallery of recent pieces. Swap the placeholder images and
+            titles for your actual work, because shockingly, websites do not
+            read minds yet.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <article class="work-card large">
+            <img
+              src="images/art-01.jpg"
+              alt="Artwork titled Replace Title One"
+            />
+            <div class="work-info">
+              <h3>Replace Title One</h3>
+              <p>Digital painting · 2026</p>
+            </div>
+          </article>
+
+          <article class="work-card medium">
+            <img
+              src="images/art-02.jpg"
+              alt="Artwork titled Replace Title Two"
+            />
+            <div class="work-info">
+              <h3>Replace Title Two</h3>
+              <p>Digital painting · 2026</p>
+            </div>
+          </article>
+
+          <article class="work-card small">
+            <img
+              src="images/art-03.jpg"
+              alt="Artwork titled Replace Title Three"
+            />
+            <div class="work-info">
+              <h3>Replace Title Three</h3>
+              <p>Study · 2026</p>
+            </div>
+          </article>
+
+          <article class="work-card small">
+            <img
+              src="images/art-04.jpg"
+              alt="Artwork titled Replace Title Four"
+            />
+            <div class="work-info">
+              <h3>Replace Title Four</h3>
+              <p>Digital painting · 2025</p>
+            </div>
+          </article>
+
+          <article class="work-card small">
+            <img
+              src="images/art-05.jpg"
+              alt="Artwork titled Replace Title Five"
+            />
+            <div class="work-info">
+              <h3>Replace Title Five</h3>
+              <p>Experiment · 2025</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="page-section about"
+        aria-labelledby="about-title"
+      >
+        <div class="about-panel">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">The work</h2>
+          <p>
+            Figurative, distorted, emotional, and slightly feral. The nice
+            polite gallery wall got dragged through a dream and came back
+            different.
+          </p>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            I make modern neo-expressionist digital work focused on fractured
+            bodies, uneasy colour, and the strange theatre of being a person.
+            The images sit somewhere between confession, mask, and omen.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="page-section contact"
+        aria-labelledby="contact-title"
+      >
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">
+          Commissions, prints, collaborations, weird ideas.
+        </h2>
+        <p>
+          For enquiries, commissions, or availability, reach out through email
+          or social. Replace these links with your real ones before launching,
+          unless you enjoy shouting into the void.
+        </p>
+
+        <div class="contact-links">
+          <a class="button primary" href="mailto:your-email@example.com"
+            >Email me</a
+          >
+          <a class="button" href="https://instagram.com/your-handle"
+            >Instagram</a
+          >
+          <a class="button" href="https://www.artstation.com/your-handle"
+            >ArtStation</a
+          >
+        </div>
       </section>
     </main>
+
+    <footer>
+      <span>© <span id="year"></span> Kevin Broome</span>
+      <span>Built as a one-page static art portfolio.</span>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
