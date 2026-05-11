@@ -505,6 +505,79 @@ h2 {
 }
 
 /* =========================
+   Art Society
+========================= */
+
+.art-society {
+  width: 100%;
+  padding: 96px 0;
+  background:
+    radial-gradient(
+      circle at 14% 20%,
+      rgba(230, 83, 47, 0.18),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      rgba(244, 238, 232, 0.08),
+      rgba(244, 238, 232, 0.025)
+    );
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.art-society-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.art-society-heading h2 {
+  max-width: 520px;
+}
+
+.art-society-copy {
+  padding: 30px;
+  border-radius: var(--radius);
+  background: rgba(13, 11, 11, 0.42);
+  border: 1px solid rgba(244, 238, 232, 0.14);
+  backdrop-filter: blur(18px);
+}
+
+.art-society-copy p {
+  color: var(--muted);
+}
+
+.art-society-copy .lead {
+  color: var(--text);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+.art-society-copy p:last-of-type {
+  margin-bottom: 28px;
+}
+
+@media (max-width: 900px) {
+  .art-society {
+    padding: 72px 0;
+  }
+
+  .art-society-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .art-society-copy {
+    padding: 22px;
+  }
+}
+
+/* =========================
    About
 ========================= */
 
