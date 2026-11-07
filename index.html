@@ -1,16 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kevin Broome | Artist</title>
-    <meta name="description" content="Art portfolio for Kevin Broome." />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="images/favicon_kb.png"
-    />
+    <title>Kevin Broome | Neo-expressionist artist</title>
+    <meta name="description" content="Explore the art of Kevin Broome: modern neo-expressionism, selected artwork, exhibitions and creative community work in South Wales." />
+    <meta name="theme-color" content="#0d0b0b" />
+    <link rel="icon" type="image/png" sizes="512x512" href="images/favicon_kb.png" />
     <link rel="apple-touch-icon" href="images/favicon_kb.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -21,477 +17,166 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
-
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="#top" aria-label="Kevin Broome Art home">
+        <a class="brand" href="index.html" aria-label="Kevin Broome Art home">
           <span class="brand-mark" aria-hidden="true"></span>
           <span>Kevin Broome</span>
         </a>
-
-        <div class="nav-links">
-          <a href="#work">Work</a>
-          <a href="#exhibitions">Exhibitions</a>
-          <a href="#art-society">Aberdare Art Society</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+        <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="primary-navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="artwork.html">Artwork</a>
+          <a href="exhibitions.html">Exhibitions</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
         </div>
       </nav>
     </header>
-
-    <main id="top">
-      <section class="page-section hero" aria-labelledby="hero-title">
-        <div>
-          <p class="eyebrow">Modern neo-expressionism</p>
-          <h1 id="hero-title">Art with teeth.</h1>
-          <p class="hero-copy">
-            Two people can stand before the same face and see different ghosts
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="#work">View work</a>
-            <a class="button" href="#contact">Get in touch</a>
-          </div>
-        </div>
-
-        <div class="hero-art" aria-label="Featured artwork">
-          <article class="feature-card">
-            <img
-              src="images/momento_mori.jpg"
-              alt="Featured neo-expressionist artwork"
-            />
-            <div class="feature-label">
-              <strong>Featured piece</strong>
-              <span>Momento Mori</span>
-            </div>
-          </article>
-
-          <div class="floating-note">
-            <b>Digital portfolio</b><br />
-            Selected works, studies, commissions, and the occasional beautiful
-            accident.
-          </div>
-        </div>
+    <main id="main-content">
+      <section aria-labelledby="hero-title" class="page-section hero">
+      <div>
+      <p class="eyebrow">Modern neo-expressionism</p>
+      <h1 id="hero-title">Art with teeth.</h1>
+      <p class="hero-copy">
+                  Two people can stand before the same face and see different ghosts
+                </p>
+      <div class="hero-actions">
+      <a class="button primary" href="artwork.html">View work</a>
+      <a class="button" href="#contact">Get in touch</a>
+      </div>
+      </div>
+      <div aria-label="Featured artwork" class="hero-art">
+      <article class="feature-card">
+      <img alt="Momento Mori, featured artwork by Kevin Broome" fetchpriority="high" src="images/momento_mori.jpg"/>
+      <div class="feature-label">
+      <strong>Featured piece</strong>
+      <span>Momento Mori</span>
+      </div>
+      </article>
+      <div class="floating-note">
+      <b>Digital portfolio</b><br/>
+                  Selected works, studies, commissions, and the occasional beautiful
+                  accident.
+                </div>
+      </div>
       </section>
-
-      <section id="work" class="page-section" aria-labelledby="work-title">
-        <div class="container">
-          <div class="section-heading">
-            <h2 id="work-title">Selected work</h2>
-            <p>
-              Some worlds exist beyond language: the ones around us, and the
-              ones buried within. My work explores those places words cannot
-              quite reach.
-            </p>
-          </div>
-
-          <div class="gallery">
-            <article class="work-card large">
-              <button
-                class="lightbox-trigger"
-                type="button"
-                data-full="images/every_single_thought_at_once.jpg"
-                data-title="Every Single Thought at Once"
-                data-meta="Mixed Media · 2023"
-                aria-label="Open Every Single Thought at Once in lightbox"
-              >
-                <img
-                  src="images/every_single_thought_at_once.jpg"
-                  alt="Every Single Thought at Once"
-                />
-                <div class="work-info">
-                  <h3>Every Single Thought at Once</h3>
-                  <p>Mixed Media · 2023</p>
-                </div>
-              </button>
-            </article>
-
-            <article class="work-card medium">
-              <button
-                class="lightbox-trigger"
-                type="button"
-                data-full="images/equals_true.jpg"
-                data-title="=true"
-                data-meta="Mixed Media · 2022"
-                aria-label="Open =true in lightbox"
-              >
-                <img src="images/equals_true.jpg" alt="=true" />
-                <div class="work-info">
-                  <h3>=true</h3>
-                  <p>Mixed Media · 2022</p>
-                </div>
-              </button>
-            </article>
-
-            <article class="work-card small">
-              <button
-                class="lightbox-trigger"
-                type="button"
-                data-full="images/exploding_head_syndrome.jpg"
-                data-title="Exploding Head Syndrome"
-                data-meta="Sculpture · 2024"
-                aria-label="Open Exploding Head Syndrome in lightbox"
-              >
-                <img
-                  src="images/exploding_head_syndrome.jpg"
-                  alt="Exploding Head Syndrome"
-                />
-                <div class="work-info">
-                  <h3>Exploding Head Syndrome</h3>
-                  <p>Sculpture · 2024</p>
-                </div>
-              </button>
-            </article>
-
-            <article class="work-card small">
-              <button
-                class="lightbox-trigger"
-                type="button"
-                data-full="images/persephone.jpg"
-                data-title="Persephone"
-                data-meta="Ink · 2022"
-                aria-label="Open Persephone in lightbox"
-              >
-                <img src="images/persephone.jpg" alt="Persephone" />
-                <div class="work-info">
-                  <h3>Persephone</h3>
-                  <p>Ink · 2022</p>
-                </div>
-              </button>
-            </article>
-
-            <article class="work-card small">
-              <button
-                class="lightbox-trigger"
-                type="button"
-                data-full="images/raven_with_berry.jpg"
-                data-title="Raven with Berry"
-                data-meta="Acrylic · 2019"
-                aria-label="Open Raven with Berry in lightbox"
-              >
-                <img src="images/raven_with_berry.jpg" alt="Raven with Berry" />
-                <div class="work-info">
-                  <h3>Raven with Berry</h3>
-                  <p>Acrylic · 2019</p>
-                </div>
-              </button>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="exhibitions"
-        class="page-section exhibitions"
-        aria-labelledby="exhibitions-title"
-      >
+      <section id="work" class="page-section home-work" aria-labelledby="home-work-title">
         <div class="section-heading">
-          <h2 id="exhibitions-title">Exhibitions</h2>
-          <p>Selected shows, displays, and public appearances of the work.</p>
+          <h2 id="home-work-title">Selected work</h2>
+          <p>Some worlds exist beyond language: the ones around us, and the ones buried within. My work explores those places words cannot quite reach.</p>
         </div>
-
+        <div class="gallery home-gallery">
+          <article class="work-card small">
+          <button aria-label="Open Every Single Thought at Once in lightbox" class="lightbox-trigger" data-full="images/every_single_thought_at_once.jpg" data-meta="Mixed Media · 2023" data-title="Every Single Thought at Once" type="button">
+          <img alt="Every Single Thought at Once" loading="lazy" src="images/every_single_thought_at_once.jpg"/>
+          <div class="work-info">
+          <h3>Every Single Thought at Once</h3>
+          <p>Mixed Media · 2023</p>
+          </div>
+          </button>
+          </article>
+          <article class="work-card small">
+          <button aria-label="Open =true in lightbox" class="lightbox-trigger" data-full="images/equals_true.jpg" data-meta="Mixed Media · 2022" data-title="=true" type="button">
+          <img alt="=true" loading="lazy" src="images/equals_true.jpg"/>
+          <div class="work-info">
+          <h3>=true</h3>
+          <p>Mixed Media · 2022</p>
+          </div>
+          </button>
+          </article>
+          <article class="work-card small">
+          <button aria-label="Open Exploding Head Syndrome in lightbox" class="lightbox-trigger" data-full="images/exploding_head_syndrome.jpg" data-meta="Sculpture · 2024" data-title="Exploding Head Syndrome" type="button">
+          <img alt="Exploding Head Syndrome" loading="lazy" src="images/exploding_head_syndrome.jpg"/>
+          <div class="work-info">
+          <h3>Exploding Head Syndrome</h3>
+          <p>Sculpture · 2024</p>
+          </div>
+          </button>
+          </article>
+        </div>
+        <div class="section-end">
+          <a class="button" href="artwork.html">Explore all artwork <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+      <section class="page-section home-exhibitions" aria-labelledby="home-exhibitions-title">
+        <div class="section-heading">
+          <h2 id="home-exhibitions-title">Exhibitions</h2>
+          <p>Where the work leaves the studio and meets the world.</p>
+        </div>
         <div class="exhibition-list">
           <article class="exhibition-item">
-            <div class="exhibition-meta">
-              <span class="exhibition-date">September 2025</span>
-              <h3>Aberdare Art Society</h3>
-              <p>Cynon Valley Museum</p>
-            </div>
-
-            <div class="exhibition-photos two-photos">
-              <img
-                src="images/exhibitions/CVM_2025.jpg"
-                alt="Artwork display from Cynon Valley Museum Exhibition"
-              />
-              <img
-                src="images/exhibitions/CVM_2025_2.jpg"
-                alt="Artwork display from Cynon Valley Museum Exhibition"
-              />
-            </div>
-          </article>
-
-          <article class="exhibition-item">
-            <div class="exhibition-meta">
-              <span class="exhibition-date">November 2024</span>
-              <h3>Aberdare Art Society</h3>
-              <p>Cynon Valley Museum</p>
-            </div>
-
-            <div class="exhibition-photos one-photo">
-              <img
-                src="images/exhibitions/Advert_CVM_2024.jpg"
-                alt="Advert for Exhibition"
-              />
-            </div>
-          </article>
-
-          <article class="exhibition-item">
-            <div class="exhibition-meta">
-              <span class="exhibition-date">September 2023</span>
-              <h3>Aberdare Art Society</h3>
-              <p>Cynon Valley Museum</p>
-            </div>
-
-            <div class="exhibition-photos two-photos">
-              <img
-                src="images/exhibitions/Advert_CVM_2023.jpg"
-                alt="Artwork display from Cynon Valley Museum Exhibition"
-              />
-              <img
-                src="images/exhibitions/Install_CVM_2023.jpg"
-                alt="Photo of work installation for exhibition"
-              />
-            </div>
-          </article>
-
-          <article class="exhibition-item">
-            <div class="exhibition-meta">
-              <span class="exhibition-date">May 2023</span>
-              <h3>Gwanwyn Festival Art Exhibition</h3>
-              <p>Hirwaun Village Hall</p>
-            </div>
-
-            <div class="exhibition-photos one-photo">
-              <img
-                src="images/exhibitions/gwanwyn_2023.jpg"
-                alt="Photo from exhibition"
-              />
-            </div>
-          </article>
-
-          <article class="exhibition-item">
-            <div class="exhibition-meta">
-              <span class="exhibition-date">November 2022</span>
-              <h3>Aberdare Art Society</h3>
-              <p>Cynon Valley Museum</p>
-            </div>
-
-            <div class="exhibition-photos one-photo">
-              <img
-                src="images/exhibitions/Advert_CVM_2022.jpg"
-                alt="Advert for Exhibition"
-              />
-            </div>
-          </article>
-
-          <article class="exhibition-item">
-            <div class="exhibition-meta">
-              <span class="exhibition-date">August 2017</span>
-              <h3>Aberdare Art Society</h3>
-              <p>Dare Valley Country Park</p>
-            </div>
-
-            <div class="exhibition-photos one-photo">
-              <img
-                src="images/exhibitions/DVP_2017.jpg"
-                alt="Photo from Exhibition"
-              />
-            </div>
+          <div class="exhibition-meta">
+          <span class="exhibition-date">September 2025</span>
+          <h3>Aberdare Art Society</h3>
+          <p>Cynon Valley Museum</p>
+          </div>
+          <div class="exhibition-photos two-photos">
+          <img alt="Artwork display from Cynon Valley Museum Exhibition" loading="lazy" src="images/exhibitions/CVM_2025.jpg"/>
+          <img alt="Artwork display from Cynon Valley Museum Exhibition" loading="lazy" src="images/exhibitions/CVM_2025_2.jpg"/>
+          </div>
           </article>
         </div>
+        <div class="section-end">
+          <a class="button" href="exhibitions.html">View the exhibition archive <span aria-hidden="true">↗</span></a>
+        </div>
       </section>
-
-      <section
-        id="art-society"
-        class="art-society"
-        aria-labelledby="art-society-title"
-      >
-        <div class="page-section art-society-inner">
-          <div class="art-society-heading">
-            <p class="eyebrow">Community work</p>
-            <h2 id="art-society-title">Aberdare Art Society</h2>
+      <section class="home-about" aria-labelledby="home-about-title">
+        <div class="page-section home-about-inner">
+          <div>
+            <p class="eyebrow">Behind the work</p>
+            <h2 id="home-about-title">More than a canvas.</h2>
           </div>
-
-          <div class="art-society-copy">
-            <p class="lead">
-              Aberdare Art Society is a long-running community art group with
-              roots dating back to the 1940s. The group brings together artists
-              of all abilities, working across a wide range of mediums, styles,
-              and approaches.
-            </p>
-
-            <p>
-              I have been chairperson of the society since 2018, helping to
-              support its weekly running, organise workshops and demonstrations,
-              and create opportunities for members to develop their practice.
-              This has included working with professional artists across South
-              Wales, liaising with galleries for exhibitions, and securing over
-              £5,000 in grant funding for the group.
-            </p>
-
-            <p>
-              The society meets every Wednesday at 7pm and is open to anyone
-              with an interest in creating art, whether they are experienced,
-              returning to art, or starting for the first time.
-            </p>
-
-            <a
-              class="button"
-              href="https://www.facebook.com/AberdareArtSociety"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit Aberdare Art Society
-            </a>
+          <div class="home-about-copy">
+            <p>My work began as a way to quiet my mind: to give shape to thoughts and feelings that moved too quickly, too heavily, or too strangely to explain in words.</p>
+            <p>Outside the studio, I chair Aberdare Art Society, supporting a creative community in South Wales.</p>
+            <a class="button" href="about.html">About me &amp; the art society <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
-
-      <section
-        id="about"
-        class="page-section about"
-        aria-labelledby="about-title"
-      >
-        <div class="about-panel">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">The work</h2>
-          <p>
-            My work began as a way to quiet my mind: to give shape to thoughts
-            and feelings that moved too quickly, too heavily, or too strangely
-            to explain in words.
-          </p>
-        </div>
-
-        <div class="about-copy">
-          <p>
-            I create modern neo-expressionist art as a way of looking inward and
-            making sense of the world around me. My
-            <em>Fate</em> series explores the emotions we often cannot speak:
-            dark, chaotic, joyful, frightening, beautiful, and sometimes all of
-            those things at once.
-          </p>
-
-          <p>
-            Some feelings shine like light. Others open beneath us like
-            bottomless chasms. My work sits in that unstable space, where
-            introspection turns into image and the unspeakable begins to take
-            form.
-          </p>
-        </div>
-      </section>
-
-      <section
-        id="contact"
-        class="page-section contact"
-        aria-labelledby="contact-title"
-      >
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">
-          Commissions, prints, collaborations, <br />
-          weird ideas.
-        </h2>
-        <p>
-          For enquiries, commissions, or availability, reach out through email
-          or social.
-        </p>
-
-        <div class="contact-links">
-          <a class="button primary" href="mailto:kbroome88@gmail.com"
-            >Email me</a
-          >
-          <a class="button" href="https://www.facebook.com/Coemgein"
-            >Facebook</a
-          >
-          <a class="button" href="https://www.instagram.com/neon.n.o.v.a"
-            >Instagram</a
-          >
-        </div>
+      <section aria-labelledby="contact-title" class="page-section contact" id="contact">
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">
+                Commissions, prints, collaborations, <br/>
+                weird ideas.
+              </h2>
+      <p>
+                For enquiries, commissions, or availability, reach out through email
+                or social.
+              </p>
+      <div class="contact-links">
+      <a class="button primary" href="mailto:kbroome88@gmail.com">Email me</a>
+      <a class="button" href="https://www.facebook.com/Coemgein">Facebook</a>
+      <a class="button" href="https://www.instagram.com/neon.n.o.v.a">Instagram</a>
+      </div>
       </section>
     </main>
-
     <footer>
       <span>© <span id="year"></span> Kevin Broome</span>
       <span>Where the void stares back.</span>
     </footer>
-
-    <div class="lightbox" id="art-lightbox" aria-hidden="true">
-      <div class="lightbox-backdrop" data-lightbox-close></div>
-
-      <div
-        class="lightbox-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="lightbox-title"
-      >
-        <button
-          class="lightbox-close"
-          type="button"
-          data-lightbox-close
-          aria-label="Close lightbox"
-        >
-          ×
-        </button>
-
-        <img class="lightbox-image" id="lightbox-image" src="" alt="" />
-
-        <div class="lightbox-caption">
-          <h3 id="lightbox-title"></h3>
-          <p id="lightbox-meta"></p>
-        </div>
-      </div>
+    <div aria-hidden="true" class="lightbox" id="art-lightbox">
+    <div class="lightbox-backdrop" data-lightbox-close=""></div>
+    <div aria-labelledby="lightbox-title" aria-modal="true" class="lightbox-dialog" role="dialog">
+    <button aria-label="Close lightbox" class="lightbox-close" data-lightbox-close="" type="button">
+              ×
+            </button>
+    <img alt="" class="lightbox-image" id="lightbox-image" src=""/>
+    <div class="lightbox-caption">
+    <h3 id="lightbox-title"></h3>
+    <p id="lightbox-meta"></p>
     </div>
-
-    <script>
-      const year = document.getElementById("year");
-
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
-
-      const lightbox = document.getElementById("art-lightbox");
-      const lightboxImage = document.getElementById("lightbox-image");
-      const lightboxTitle = document.getElementById("lightbox-title");
-      const lightboxMeta = document.getElementById("lightbox-meta");
-      const lightboxTriggers = document.querySelectorAll(".lightbox-trigger");
-      const lightboxCloseButtons = document.querySelectorAll(
-        "[data-lightbox-close]",
-      );
-
-      function openLightbox(trigger) {
-        const fullImage = trigger.dataset.full;
-        const title = trigger.dataset.title;
-        const meta = trigger.dataset.meta;
-
-        lightboxImage.src = fullImage;
-        lightboxImage.alt = title;
-        lightboxTitle.textContent = title;
-        lightboxMeta.textContent = meta;
-
-        lightbox.classList.add("is-open");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.classList.add("lightbox-open");
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove("is-open");
-        lightbox.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("lightbox-open");
-
-        lightboxImage.src = "";
-        lightboxImage.alt = "";
-      }
-
-      lightboxTriggers.forEach((trigger) => {
-        trigger.addEventListener("click", () => {
-          openLightbox(trigger);
-        });
-      });
-
-      lightboxCloseButtons.forEach((button) => {
-        button.addEventListener("click", closeLightbox);
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
-          closeLightbox();
-        }
-      });
-    </script>
+    </div>
+    </div>
   </body>
 </html>

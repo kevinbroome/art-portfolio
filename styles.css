@@ -858,3 +858,172 @@ body.lightbox-open {
     border-radius: 18px;
   }
 }
+
+
+/* =========================
+   Multi-page navigation and shared layouts
+========================= */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 9999;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #160b08;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.skip-link:focus { top: 12px; }
+
+.nav { position: relative; }
+
+.nav-links a[aria-current="page"] {
+  color: var(--text);
+}
+
+.nav-links a[aria-current="page"]::after {
+  content: "";
+  display: block;
+  height: 2px;
+  margin-top: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.menu-toggle { display: none; }
+
+.page-hero {
+  padding: clamp(68px, 10vw, 132px) 0 72px;
+}
+
+.page-hero h1 {
+  max-width: 1000px;
+  margin-bottom: 34px;
+  font-size: clamp(3.9rem, 9vw, 8.4rem);
+}
+
+.page-hero-lead {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.page-hero .hero-actions { margin-top: 30px; }
+
+.home-work { padding-top: 38px; }
+.home-gallery { padding-bottom: 0; }
+.home-gallery .work-card { min-height: 400px; }
+.section-end { display: flex; justify-content: flex-end; margin-top: 28px; }
+.section-end .button { gap: 12px; }
+
+.home-exhibitions { padding: 118px 0; }
+.home-exhibitions .exhibition-list { margin-top: 32px; }
+
+.home-about {
+  width: 100%;
+  padding: 90px 0;
+  background: linear-gradient(135deg, rgba(230,83,47,.15), rgba(244,238,232,.035));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.home-about-inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.home-about-inner h2 { max-width: 490px; }
+
+.home-about-copy {
+  max-width: 650px;
+  font-size: 1.1rem;
+}
+
+.home-about-copy p { color: var(--muted); }
+.home-about-copy p:first-child { color: var(--text); font-size: 1.35rem; }
+.home-about-copy .button { margin-top: 14px; gap: 12px; }
+
+.portfolio-section .gallery { padding-bottom: 70px; }
+.exhibitions-page { padding-top: 0; }
+.about-page-section { padding: 16px 0 110px; border-top: 0; }
+
+.page-cta {
+  text-align: center;
+  padding: 50px 0 110px;
+}
+.page-cta h2 { margin-bottom: 20px; }
+.page-cta p:not(.eyebrow) { margin: 0 auto 28px; max-width: 590px; color: var(--muted); }
+
+/* Keyboard users should see clearly where they are. */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 4px;
+}
+
+/* Preserve the existing design while making navigation usable on phones. */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 11px;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--bg-soft);
+    cursor: pointer;
+  }
+  .menu-toggle span { display: block; height: 2px; border-radius: 2px; background: var(--text); }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    border: 1px solid var(--line);
+    border-radius: 0 0 18px 18px;
+    background: #171313;
+    box-shadow: var(--shadow);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { display: block; padding: 12px 10px; }
+  .nav-links a[aria-current="page"]::after { display: none; }
+  .home-about-inner { grid-template-columns: 1fr; gap: 30px; }
+  .home-gallery .work-card { min-height: 420px; }
+  .home-exhibitions { padding: 85px 0; }
+  .page-hero { padding: 72px 0 55px; }
+}
+
+@media (max-width: 560px) {
+  .home-work { padding-top: 10px; }
+  .home-gallery .work-card { min-height: 340px; }
+  .section-end { justify-content: stretch; }
+  .section-end .button { width: 100%; }
+  .home-about { padding: 70px 0; }
+  .home-about-copy p:first-child { font-size: 1.15rem; }
+  .page-hero h1 { font-size: clamp(3.6rem, 14vw, 5.2rem); }
+  .page-hero { padding: 66px 0 46px; }
+  .portfolio-section .gallery { padding-bottom: 42px; }
+  .about-page-section { padding-bottom: 74px; }
+  .page-cta { padding: 50px 0 75px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* Keep anchor destinations visible below the sticky header. */
+section[id] { scroll-margin-top: 96px; }
