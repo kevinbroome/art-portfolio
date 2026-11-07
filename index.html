@@ -180,8 +180,15 @@
             </button>
     <img alt="" class="lightbox-image" id="lightbox-image" src=""/>
     <div class="lightbox-caption">
-    <h3 id="lightbox-title"></h3>
-    <p id="lightbox-meta"></p>
+      <div class="lightbox-description" aria-live="polite" aria-atomic="true">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-meta"></p>
+        <p class="lightbox-counter" id="lightbox-counter"></p>
+      </div>
+      <div class="lightbox-controls" role="group" aria-label="Browse artwork">
+        <button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Previous artwork" title="Previous artwork (Left arrow)"><span aria-hidden="true">←</span></button>
+        <button class="lightbox-nav" type="button" data-lightbox-next aria-label="Next artwork" title="Next artwork (Right arrow)"><span aria-hidden="true">→</span></button>
+      </div>
     </div>
     </div>
     </div>

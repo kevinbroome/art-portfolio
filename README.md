@@ -1,21 +1,21 @@
-# Kevin Broome | Full-width hero + animated selected works
+# Kevin Broome | Hero parallax + lightbox navigation
 
-This is the latest full four-page static art portfolio, based on the 13-work gallery version.
+Latest four-page portfolio. This update builds on the full-width **Momento Mori** hero and alternating homepage showcases.
 
-## Changes
+## What's new
 
-- Homepage hero is now full width, with **Momento Mori** behind the heading and a dark gradient for contrast. The hero image uses the existing `images/momento_mori.jpg` file.
-- **All explicit CSS border radii** are now 5px, including the logo mark, buttons, work cards, exhibition cards and lightbox.
-- The homepage's three selected works have their own large rows, alternating left and right, with separate side captions. Their images keep their proportions rather than being cropped.
-- `script.js` uses `IntersectionObserver` to slide the artworks in from alternating sides once when scrolled into view. They stop in their off-centre layout positions. The titles fade into place.
-- Accessibility: keyboard lightbox, working without JS for the homepage layout, and reduced-motion support.
-- Other pages, 13-work gallery, navigation and contact information remain unchanged.
+- **Subtle parallax**: the existing hero image scrolls approximately 12% more slowly than the rest of the page. The browser only updates its transform once per animation frame while the hero is visible. No additional libraries, image requests or CSS `background-attachment: fixed`.
+- **Lightbox browsing**: previous/next buttons on Home (3 featured works) and Artwork (all 13 works). Controls wrap between the first and last piece; Left/Right arrow keys work too. Escape closes the dialog; Tab stays inside and focus returns to the originating artwork when closed.
+- **Reduced motion**: parallax is disabled for visitors who request reduced motion. The original homepage scroll reveal also respects that setting.
+- Featured works are still manually chosen in HTML (not randomised or dynamically rotated).
 
-## Deploying to existing Cloudflare Pages project
+## Deploy
 
-1. Commit your existing work, or back it up first.
-2. Copy `index.html`, `styles.css` and `script.js` to your repository root. The ZIP also includes the other pages so it can be used as a complete snapshot.
-3. **Merge**, do not delete, the supplied `images/` directory. Your existing `images/exhibitions/` photos and favicon are not in the ZIP and must be preserved.
-4. Preview locally with Live Server, then commit and push. No separate repository, build step or Cloudflare settings are needed.
+1. Back up or commit your current work.
+2. Replace `index.html`, `artwork.html`, `styles.css` and `script.js` in your existing repository. Other HTML pages are included for convenience but unchanged.
+3. Merge the included `images/` directory; **keep your existing exhibition photos and favicon**, which are not included here.
+4. Preview locally, commit and push. Cloudflare Pages deploys automatically. No build step.
 
-Animation tweaks live in `styles.css` (`.showcase-item.will-reveal...`) and the observer options at the end of `script.js`. To change speed, adjust `transition` durations; to change when it starts, change the observer's `threshold` or `rootMargin`.
+## Adjusting the effect
+
+In `script.js`, `travelled * 0.12` controls parallax intensity; reduce to `0.08` for even subtler motion. The 90px cap limits maximum movement. CSS `.hero-fullbleed.has-parallax .hero-background` provides image overscan so the effect doesn't reveal blank areas.
