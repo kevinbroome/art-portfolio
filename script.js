@@ -2,29 +2,6 @@
 const yearElement = document.getElementById('year');
 if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-// Mobile menu
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.getElementById('primary-navigation');
-
-function closeMenu() {
-  if (!menuToggle || !navLinks) return;
-  navLinks.classList.remove('is-open');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.setAttribute('aria-label', 'Open navigation menu');
-}
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('is-open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-  });
-  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('click', event => {
-    if (!menuToggle.parentElement.contains(event.target)) closeMenu();
-  });
-}
-
 // Artwork lightbox on the homepage and Artwork page.
 const lightbox = document.getElementById('art-lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
@@ -64,7 +41,6 @@ document.querySelectorAll('[data-lightbox-close]').forEach(button => {
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     if (lightbox?.classList.contains('is-open')) closeLightbox();
-    else closeMenu();
   }
   if (event.key === 'Tab' && lightbox?.classList.contains('is-open')) {
     // The close button is the only interactive control in the dialog.

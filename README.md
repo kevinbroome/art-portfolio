@@ -1,42 +1,29 @@
-# Kevin Broome art portfolio: multi-page version
+# Kevin Broome art portfolio: updated Artwork gallery
 
-This is a drop-in expansion of the existing static Cloudflare Pages website.
+This update builds on the existing four-page static site and the previous layout fixes.
 
-## Pages
+## What's new
 
-- `index.html`: homepage with featured artwork, one featured exhibition, an about teaser and the existing contact section.
-- `artwork.html`: full gallery with all five artwork entries from the original homepage, including their lightbox.
-- `exhibitions.html`: all six exhibitions from the original homepage.
-- `about.html`: the artist's statement and full Aberdare Art Society information.
-- `styles.css`: your original stylesheet plus page layouts and a mobile navigation menu.
-- `script.js`: shared copyright year, accessible mobile navigation and artwork lightbox. No homepage animations or rotating content yet.
+- Artwork page expanded from 5 to **13 unique works**.
+- The 5 original works remain, without duplicate entries.
+- All 13 artwork photographs are supplied in `images/` with the **exact filenames referenced by the HTML**. The photo of *Momento Mori* was already on the homepage; it's now included in the full gallery too.
+- Artwork page displays each work at its natural aspect ratio in responsive columns instead of cropping the images into fixed-height boxes. Click any artwork to see it in the original lightbox.
+- The homepage, About and Exhibitions pages are otherwise unchanged, including the mobile navigation and spacing fixes.
 
-## Deployment (existing GitHub repo and Cloudflare Pages project)
+## Install into your existing Cloudflare Pages repository
 
-1. Back up or commit your current `index.html` and `styles.css`.
-2. Copy these six files into the **root of your current repository**, replacing `index.html` and `styles.css` and adding the others.
-3. **Keep your existing `images/` folder exactly as it is.** Images weren't supplied, so none are included in this download. Existing image paths are preserved.
-4. Preview with Live Server or another local HTTP server. Test the menu at mobile widths and artwork lightboxes.
-5. Push the files to the same branch as your current Cloudflare Pages deployment. You don't need another repository or another Pages project.
+1. Back up or commit your current site.
+2. Replace the six website files (`index.html`, `artwork.html`, `about.html`, `exhibitions.html`, `styles.css`, `script.js`) with the matching files from this package.
+3. Merge the supplied **`images/`** folder into the existing `images/` folder. **Do not delete your existing folder**: it contains your favicon and exhibition images, which aren't in this package.
+4. Check `artwork.html` with Live Server. Push to GitHub to deploy through your existing Cloudflare Pages project.
 
-Pages are `index.html`, `artwork.html`, `exhibitions.html`, `about.html`. Cloudflare Pages can serve clean paths like `/artwork` as well as the `.html` files.
+The photos are provided at the uploaded resolution (no artwork modifications or generative edits).
+The uploaded copies had suffixes such as `(1)` and `(3)`; copies in this package use the clean filenames referenced in HTML.
 
-### Existing assets referenced
+## Gallery labels
 
-- `images/favicon_kb.png`
-- `images/momento_mori.jpg`
-- `images/every_single_thought_at_once.jpg`
-- `images/equals_true.jpg`
-- `images/exploding_head_syndrome.jpg`
-- `images/persephone.jpg`
-- `images/raven_with_berry.jpg`
-- `images/exhibitions/CVM_2025.jpg`
-- `images/exhibitions/CVM_2025_2.jpg`
-- `images/exhibitions/Advert_CVM_2024.jpg`
-- `images/exhibitions/Advert_CVM_2023.jpg`
-- `images/exhibitions/Install_CVM_2023.jpg`
-- `images/exhibitions/gwanwyn_2023.jpg`
-- `images/exhibitions/Advert_CVM_2022.jpg`
-- `images/exhibitions/DVP_2017.jpg`
+The five pre-existing pieces retain their earlier metadata. For eight newly added gallery entries, labels use general descriptions only; I have **not invented dates, exact media or dimensions**. These can be updated when you have that information.
 
-Your HTML/CSS only included these five artwork entries and six exhibitions. I have deliberately not invented new artwork, exhibition dates or image files. Add new pieces directly to the artwork gallery when ready.
+## Notes
+
+The existing `images/exhibitions/` directory and `images/favicon_kb.png` are still needed from your current repository. No extra dependencies, build process or GitHub repository needed.
