@@ -1,29 +1,21 @@
-# Kevin Broome art portfolio: updated Artwork gallery
+# Kevin Broome | Full-width hero + animated selected works
 
-This update builds on the existing four-page static site and the previous layout fixes.
+This is the latest full four-page static art portfolio, based on the 13-work gallery version.
 
-## What's new
+## Changes
 
-- Artwork page expanded from 5 to **13 unique works**.
-- The 5 original works remain, without duplicate entries.
-- All 13 artwork photographs are supplied in `images/` with the **exact filenames referenced by the HTML**. The photo of *Momento Mori* was already on the homepage; it's now included in the full gallery too.
-- Artwork page displays each work at its natural aspect ratio in responsive columns instead of cropping the images into fixed-height boxes. Click any artwork to see it in the original lightbox.
-- The homepage, About and Exhibitions pages are otherwise unchanged, including the mobile navigation and spacing fixes.
+- Homepage hero is now full width, with **Momento Mori** behind the heading and a dark gradient for contrast. The hero image uses the existing `images/momento_mori.jpg` file.
+- **All explicit CSS border radii** are now 5px, including the logo mark, buttons, work cards, exhibition cards and lightbox.
+- The homepage's three selected works have their own large rows, alternating left and right, with separate side captions. Their images keep their proportions rather than being cropped.
+- `script.js` uses `IntersectionObserver` to slide the artworks in from alternating sides once when scrolled into view. They stop in their off-centre layout positions. The titles fade into place.
+- Accessibility: keyboard lightbox, working without JS for the homepage layout, and reduced-motion support.
+- Other pages, 13-work gallery, navigation and contact information remain unchanged.
 
-## Install into your existing Cloudflare Pages repository
+## Deploying to existing Cloudflare Pages project
 
-1. Back up or commit your current site.
-2. Replace the six website files (`index.html`, `artwork.html`, `about.html`, `exhibitions.html`, `styles.css`, `script.js`) with the matching files from this package.
-3. Merge the supplied **`images/`** folder into the existing `images/` folder. **Do not delete your existing folder**: it contains your favicon and exhibition images, which aren't in this package.
-4. Check `artwork.html` with Live Server. Push to GitHub to deploy through your existing Cloudflare Pages project.
+1. Commit your existing work, or back it up first.
+2. Copy `index.html`, `styles.css` and `script.js` to your repository root. The ZIP also includes the other pages so it can be used as a complete snapshot.
+3. **Merge**, do not delete, the supplied `images/` directory. Your existing `images/exhibitions/` photos and favicon are not in the ZIP and must be preserved.
+4. Preview locally with Live Server, then commit and push. No separate repository, build step or Cloudflare settings are needed.
 
-The photos are provided at the uploaded resolution (no artwork modifications or generative edits).
-The uploaded copies had suffixes such as `(1)` and `(3)`; copies in this package use the clean filenames referenced in HTML.
-
-## Gallery labels
-
-The five pre-existing pieces retain their earlier metadata. For eight newly added gallery entries, labels use general descriptions only; I have **not invented dates, exact media or dimensions**. These can be updated when you have that information.
-
-## Notes
-
-The existing `images/exhibitions/` directory and `images/favicon_kb.png` are still needed from your current repository. No extra dependencies, build process or GitHub repository needed.
+Animation tweaks live in `styles.css` (`.showcase-item.will-reveal...`) and the observer options at the end of `script.js`. To change speed, adjust `transition` durations; to change when it starts, change the observer's `threshold` or `rootMargin`.

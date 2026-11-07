@@ -41,65 +41,75 @@
       </nav>
     </header>
     <main id="main-content">
-      <section aria-labelledby="hero-title" class="page-section hero">
-      <div>
-      <p class="eyebrow">Modern neo-expressionism</p>
-      <h1 id="hero-title">Art with teeth.</h1>
-      <p class="hero-copy">
-                  Two people can stand before the same face and see different ghosts
-                </p>
-      <div class="hero-actions">
-      <a class="button primary" href="artwork.html">View work</a>
-      <a class="button" href="#contact">Get in touch</a>
-      </div>
-      </div>
-      <div aria-label="Featured artwork" class="hero-art">
-      <article class="feature-card">
-      <img alt="Momento Mori, featured artwork by Kevin Broome" fetchpriority="high" src="images/momento_mori.jpg"/>
-      <div class="feature-label">
-      <strong>Featured piece</strong>
-      <span>Momento Mori</span>
-      </div>
-      </article>
-      <div class="floating-note">
-      <b>Digital portfolio</b><br/>
-                  Selected works, studies, commissions, and the occasional beautiful
-                  accident.
-                </div>
-      </div>
+      <section aria-labelledby="hero-title" class="hero-fullbleed">
+        <img class="hero-background" src="images/momento_mori.jpg" alt="Momento Mori, artwork by Kevin Broome" fetchpriority="high" />
+        <div class="page-section hero-content">
+          <p class="eyebrow">Modern neo-expressionism</p>
+          <h1 id="hero-title">Art with teeth.</h1>
+          <p class="hero-copy">Two people can stand before the same face and see different ghosts</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">Explore selected work</a>
+            <a class="button" href="artwork.html">View all artwork</a>
+          </div>
+        </div>
+        <div class="hero-image-credit"><span>Featured artwork</span><strong>Momento Mori</strong></div>
       </section>
       <section id="work" class="page-section home-work" aria-labelledby="home-work-title">
         <div class="section-heading">
           <h2 id="home-work-title">Selected work</h2>
           <p>Some worlds exist beyond language: the ones around us, and the ones buried within. My work explores those places words cannot quite reach.</p>
         </div>
-        <div class="gallery home-gallery">
-          <article class="work-card small">
-          <button aria-label="Open Every Single Thought at Once in lightbox" class="lightbox-trigger" data-full="images/every_single_thought_at_once.jpg" data-meta="Mixed Media · 2023" data-title="Every Single Thought at Once" type="button">
-          <img alt="Every Single Thought at Once" loading="lazy" src="images/every_single_thought_at_once.jpg"/>
-          <div class="work-info">
-          <h3>Every Single Thought at Once</h3>
-          <p>Mixed Media · 2023</p>
-          </div>
-          </button>
+        <div class="showcase-list">
+          <article class="showcase-item showcase--right">
+            <div class="showcase-copy">
+              <p class="showcase-number">Selected work <span>01 / 03</span></p>
+              <h3>Every Single Thought at Once</h3>
+              <p class="showcase-meta">Mixed Media · 2023</p>
+              <p class="showcase-hint">Select the artwork to view it in full.</p>
+            </div>
+            <div class="showcase-art">
+              <button class="lightbox-trigger showcase-image" type="button"
+                data-full="images/every_single_thought_at_once.jpg"
+                data-title="Every Single Thought at Once"
+                data-meta="Mixed Media · 2023"
+                aria-label="Open Every Single Thought at Once in lightbox">
+                <img src="images/every_single_thought_at_once.jpg" alt="Every Single Thought at Once" loading="lazy" />
+              </button>
+            </div>
           </article>
-          <article class="work-card small">
-          <button aria-label="Open =true in lightbox" class="lightbox-trigger" data-full="images/equals_true.jpg" data-meta="Mixed Media · 2022" data-title="=true" type="button">
-          <img alt="=true" loading="lazy" src="images/equals_true.jpg"/>
-          <div class="work-info">
-          <h3>=true</h3>
-          <p>Mixed Media · 2022</p>
-          </div>
-          </button>
+          <article class="showcase-item showcase--left">
+            <div class="showcase-copy">
+              <p class="showcase-number">Selected work <span>02 / 03</span></p>
+              <h3>=true</h3>
+              <p class="showcase-meta">Mixed Media · 2022</p>
+              <p class="showcase-hint">Select the artwork to view it in full.</p>
+            </div>
+            <div class="showcase-art">
+              <button class="lightbox-trigger showcase-image" type="button"
+                data-full="images/equals_true.jpg"
+                data-title="=true"
+                data-meta="Mixed Media · 2022"
+                aria-label="Open =true in lightbox">
+                <img src="images/equals_true.jpg" alt="=true" loading="lazy" />
+              </button>
+            </div>
           </article>
-          <article class="work-card small">
-          <button aria-label="Open Exploding Head Syndrome in lightbox" class="lightbox-trigger" data-full="images/exploding_head_syndrome.jpg" data-meta="Sculpture · 2024" data-title="Exploding Head Syndrome" type="button">
-          <img alt="Exploding Head Syndrome" loading="lazy" src="images/exploding_head_syndrome.jpg"/>
-          <div class="work-info">
-          <h3>Exploding Head Syndrome</h3>
-          <p>Sculpture · 2024</p>
-          </div>
-          </button>
+          <article class="showcase-item showcase--right">
+            <div class="showcase-copy">
+              <p class="showcase-number">Selected work <span>03 / 03</span></p>
+              <h3>Exploding Head Syndrome</h3>
+              <p class="showcase-meta">Sculpture · 2024</p>
+              <p class="showcase-hint">Select the artwork to view it in full.</p>
+            </div>
+            <div class="showcase-art">
+              <button class="lightbox-trigger showcase-image" type="button"
+                data-full="images/exploding_head_syndrome.jpg"
+                data-title="Exploding Head Syndrome"
+                data-meta="Sculpture · 2024"
+                aria-label="Open Exploding Head Syndrome in lightbox">
+                <img src="images/exploding_head_syndrome.jpg" alt="Exploding Head Syndrome" loading="lazy" />
+              </button>
+            </div>
           </article>
         </div>
         <div class="section-end">
