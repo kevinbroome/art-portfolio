@@ -1,17 +1,16 @@
-# Art site: hero & button refresh (8 November 2026)
+# November 2026 exhibition update
 
-Built from the **latest uploaded** `index(5).html`, `styles(7).css` and `script(4).js` files, preserving the recently updated first selected artwork.
+This package updates the **homepage** and **exhibitions archive** for the November 2026 Aberdare Art Society show at Cynon Valley Museum.
 
-## Changes
+- The homepage now features the opening-night photo and **PACE**, replacing the September 2025 preview there.
+- The exhibitions page starts with the November 2026 entry. It shows **all five** supplied images: the opening night, PACE, two pencil portraits, the cat painting, and the helmet artwork.
+- All past exhibition listings, including September 2025, remain in the archive.
+- No CSS, JavaScript, other text, or artwork entries were changed. The archive uses existing `gallery full-gallery`/`work-card` styles, plus an inline grid-column placement for the three-photo row.
 
-- **Hero zoom:** `Momento Mori` now stays at **1.3×** during parallax, and at rest or under `prefers-reduced-motion`. The old parallax-specific 1.1× override is removed.
-- **Hero copy:** “I make the marks. You bring the ghosts.” replaces the longer subtitle.
-- **Hero actions:** “Enter the work” links to `#work`; “Beyond the frame” links to `artwork.html`. Clear accessible labels retain their destinations for screen readers.
-- **Button hover:** Replaces the vertical jump with a left-to-right warm colour sweep and soft glowing border. It also works via keyboard focus and respects reduced-motion settings. Applied consistently to buttons across all pages.
-- **Latest selected artwork retained:** `It Isn't Lonely in Here` remains the first featured work. The lightbox's old 2023 mixed-media metadata is corrected to match its displayed “Acrylic · 2026” caption.
+## Install
 
-## Deployment
+1. Replace `index.html` and `exhibitions.html` in the site root with those from this package.
+2. Copy the five JPGs from `images/exhibitions/` into the same existing directory on your site. **Do not delete your existing exhibition photos.**
+3. Hard refresh locally and confirm both pages, then commit/deploy.
 
-Replace `index.html`, `styles.css`, and `script.js` in your site root. Other HTML pages and the `images/` folder remain as they are; **images are not included in this ZIP**. No extra JavaScript libraries or build step needed.
-
-Note: the parallax movement rate is unchanged, only its zoom level. Tweak the scroll multiplier in `script.js` later if you want stronger movement.
+The archive's additional three photos use your existing responsive artwork-gallery classes. On smaller screens they will stack as the current stylesheet provides.
