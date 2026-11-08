@@ -1266,6 +1266,7 @@ section[id] { scroll-margin-top: 96px; }
   object-fit: cover;
   border-radius: var(--radius);
   transition: filter 300ms ease, transform 400ms ease;
+  object-position: top;
 }
 .showcase-image:hover img { filter: brightness(1.07); transform: scale(1.012); }
 
