@@ -103,13 +103,17 @@ if (showcaseItems.length && 'IntersectionObserver' in window && !prefersReducedM
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-  showcaseItems.forEach(item => {
-    item.classList.add('will-reveal');
-    artworkObserver.observe(item);
+  // Establish the hidden/offscreen state first. Observing immediately can
+  // toggle is-visible in the same rendering cycle and make the art snap.
+  showcaseItems.forEach(item => item.classList.add('will-reveal'));
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      showcaseItems.forEach(item => artworkObserver.observe(item));
+    });
   });
 }
 
-// Homepage: gentle parallax, image moves ~12% more slowly than the page.
+// Homepage: gentle parallax, with movement kept inside the 1.1x image overscan.
 // Uses the existing hero image and requestAnimationFrame; no extra dependencies.
 const hero = document.querySelector('.hero-fullbleed');
 if (hero && !prefersReducedMotion && 'requestAnimationFrame' in window) {
@@ -121,7 +125,9 @@ if (hero && !prefersReducedMotion && 'requestAnimationFrame' in window) {
     const rect = hero.getBoundingClientRect();
     if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
     const travelled = Math.max(0, -rect.top);
-    const offset = Math.min(travelled * 0.12, 90);
+    // A 1.1x image has about 5% spare height above/below the viewport.
+    // Stay slightly inside that limit so no background edges are exposed.
+    const offset = Math.min(travelled * 0.045, rect.height * 0.045);
     hero.style.setProperty('--hero-parallax-offset', `${offset.toFixed(1)}px`);
   }
 

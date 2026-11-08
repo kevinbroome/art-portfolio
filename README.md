@@ -1,21 +1,20 @@
-# Kevin Broome | Hero parallax + lightbox navigation
+# Kevin Broome art site — homepage tweaks (8 November 2026)
 
-Latest four-page portfolio. This update builds on the full-width **Momento Mori** hero and alternating homepage showcases.
+Replace the existing `styles.css` and `script.js` in the site root with these two files. No HTML or artwork image changes are needed.
 
-## What's new
+## Changes
 
-- **Subtle parallax**: the existing hero image scrolls approximately 12% more slowly than the rest of the page. The browser only updates its transform once per animation frame while the hero is visible. No additional libraries, image requests or CSS `background-attachment: fixed`.
-- **Lightbox browsing**: previous/next buttons on Home (3 featured works) and Artwork (all 13 works). Controls wrap between the first and last piece; Left/Right arrow keys work too. Escape closes the dialog; Tab stays inside and focus returns to the originating artwork when closed.
-- **Reduced motion**: parallax is disabled for visitors who request reduced motion. The original homepage scroll reveal also respects that setting.
-- Featured works are still manually chosen in HTML (not randomised or dynamically rotated).
+- **Hero:** *Momento Mori* now uses `scale(1.1)` consistently, with or without JavaScript and when reduced motion is requested. The subtle parallax is capped to prevent the smaller image overscan from exposing background edges.
+- **Selected works:** The artwork elements are scaled to **1.5×** on desktop. Each work is clipped at its own section's edges, including top and bottom. On narrower screens (760px and below), scale is **1.2×** to avoid cutting off too much of the work.
+- **No row separators:** Removed the bottom borders from the selected-work sections, leaving the artwork metadata's small separator untouched.
+- **Smoother reveals:** The hidden/offscreen state is established before the IntersectionObserver starts observing. Artwork frames reserve their size before lazy images finish loading, avoiding layout shifts that can make the animation snap. Reduced-motion visitors still see the art without reveal animations.
 
-## Deploy
+The larger artwork frame uses `object-fit: cover`, so the showcased version is intentionally cropped. The lightbox still displays the original full-size artwork (`object-fit: contain`).
 
-1. Back up or commit your current work.
-2. Replace `index.html`, `artwork.html`, `styles.css` and `script.js` in your existing repository. Other HTML pages are included for convenience but unchanged.
-3. Merge the included `images/` directory; **keep your existing exhibition photos and favicon**, which are not included here.
-4. Preview locally, commit and push. Cloudflare Pages deploys automatically. No build step.
+## Deployment
 
-## Adjusting the effect
+1. Back up or commit your current site files.
+2. Replace **`styles.css`** and **`script.js`** in the same folder as `index.html`.
+3. Refresh locally (use a hard refresh if the browser caches the CSS), then commit and push as normal.
 
-In `script.js`, `travelled * 0.12` controls parallax intensity; reduce to `0.08` for even subtler motion. The 90px cap limits maximum movement. CSS `.hero-fullbleed.has-parallax .hero-background` provides image overscan so the effect doesn't reveal blank areas.
+No extra libraries or build step. Existing image paths and the four HTML pages remain unchanged. No homepage text has been changed in this round.
