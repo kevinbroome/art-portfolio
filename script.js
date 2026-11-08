@@ -113,7 +113,7 @@ if (showcaseItems.length && 'IntersectionObserver' in window && !prefersReducedM
   });
 }
 
-// Homepage: gentle parallax, with movement kept inside the 1.1x image overscan.
+// Homepage: gentle parallax, with movement kept inside the 1.3x image overscan.
 // Uses the existing hero image and requestAnimationFrame; no extra dependencies.
 const hero = document.querySelector('.hero-fullbleed');
 if (hero && !prefersReducedMotion && 'requestAnimationFrame' in window) {
@@ -125,7 +125,7 @@ if (hero && !prefersReducedMotion && 'requestAnimationFrame' in window) {
     const rect = hero.getBoundingClientRect();
     if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
     const travelled = Math.max(0, -rect.top);
-    // A 1.1x image has about 5% spare height above/below the viewport.
+    // A 1.3x image has about 15% spare height above/below the viewport.
     // Stay slightly inside that limit so no background edges are exposed.
     const offset = Math.min(travelled * 0.045, rect.height * 0.045);
     hero.style.setProperty('--hero-parallax-offset', `${offset.toFixed(1)}px`);

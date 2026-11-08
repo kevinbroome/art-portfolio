@@ -1,20 +1,17 @@
-# Kevin Broome art site — homepage tweaks (8 November 2026)
+# Art site: hero & button refresh (8 November 2026)
 
-Replace the existing `styles.css` and `script.js` in the site root with these two files. No HTML or artwork image changes are needed.
+Built from the **latest uploaded** `index(5).html`, `styles(7).css` and `script(4).js` files, preserving the recently updated first selected artwork.
 
 ## Changes
 
-- **Hero:** *Momento Mori* now uses `scale(1.1)` consistently, with or without JavaScript and when reduced motion is requested. The subtle parallax is capped to prevent the smaller image overscan from exposing background edges.
-- **Selected works:** The artwork elements are scaled to **1.5×** on desktop. Each work is clipped at its own section's edges, including top and bottom. On narrower screens (760px and below), scale is **1.2×** to avoid cutting off too much of the work.
-- **No row separators:** Removed the bottom borders from the selected-work sections, leaving the artwork metadata's small separator untouched.
-- **Smoother reveals:** The hidden/offscreen state is established before the IntersectionObserver starts observing. Artwork frames reserve their size before lazy images finish loading, avoiding layout shifts that can make the animation snap. Reduced-motion visitors still see the art without reveal animations.
-
-The larger artwork frame uses `object-fit: cover`, so the showcased version is intentionally cropped. The lightbox still displays the original full-size artwork (`object-fit: contain`).
+- **Hero zoom:** `Momento Mori` now stays at **1.3×** during parallax, and at rest or under `prefers-reduced-motion`. The old parallax-specific 1.1× override is removed.
+- **Hero copy:** “I make the marks. You bring the ghosts.” replaces the longer subtitle.
+- **Hero actions:** “Enter the work” links to `#work`; “Beyond the frame” links to `artwork.html`. Clear accessible labels retain their destinations for screen readers.
+- **Button hover:** Replaces the vertical jump with a left-to-right warm colour sweep and soft glowing border. It also works via keyboard focus and respects reduced-motion settings. Applied consistently to buttons across all pages.
+- **Latest selected artwork retained:** `It Isn't Lonely in Here` remains the first featured work. The lightbox's old 2023 mixed-media metadata is corrected to match its displayed “Acrylic · 2026” caption.
 
 ## Deployment
 
-1. Back up or commit your current site files.
-2. Replace **`styles.css`** and **`script.js`** in the same folder as `index.html`.
-3. Refresh locally (use a hard refresh if the browser caches the CSS), then commit and push as normal.
+Replace `index.html`, `styles.css`, and `script.js` in your site root. Other HTML pages and the `images/` folder remain as they are; **images are not included in this ZIP**. No extra JavaScript libraries or build step needed.
 
-No extra libraries or build step. Existing image paths and the four HTML pages remain unchanged. No homepage text has been changed in this round.
+Note: the parallax movement rate is unchanged, only its zoom level. Tweak the scroll multiplier in `script.js` later if you want stronger movement.

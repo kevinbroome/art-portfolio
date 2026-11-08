@@ -133,17 +133,45 @@ img {
   background: rgba(244, 238, 232, 0.07);
   color: var(--text);
   font-weight: 700;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* An ink-like colour sweep replaces the old upward hover jump. */
   transition:
-    transform 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease;
+    background 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
 }
 
-.button:hover {
-  transform: translateY(-2px);
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(105deg, rgba(230, 83, 47, 0.42), rgba(242, 184, 75, 0.24));
+  transform: translateX(-102%);
+  transition: transform 440ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.button:hover,
+.button:focus-visible {
   background: rgba(244, 238, 232, 0.11);
-  border-color: rgba(244, 238, 232, 0.28);
+  border-color: rgba(242, 184, 75, 0.75);
+  box-shadow: 0 0 0 1px rgba(242, 184, 75, 0.14), 0 0 28px rgba(230, 83, 47, 0.18);
+}
+
+.button:hover::before,
+.button:focus-visible::before { transform: translateX(0); }
+
+.button:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+.button.primary::before {
+  background: linear-gradient(105deg, rgba(242, 184, 75, 0.48), rgba(255, 238, 190, 0.22));
 }
 
 .button.primary {
@@ -1095,7 +1123,7 @@ section[id] { scroll-margin-top: 96px; }
   height: 100%;
   object-fit: cover;
   object-position: 50% 49%;
-  transform: scale(1.1);
+  transform: scale(1.3);
   transform-origin: center center;
 }
 
@@ -1302,7 +1330,7 @@ section[id] { scroll-margin-top: 96px; }
    The original image remains static for reduced-motion or no-JS visitors.
 ========================= */
 .hero-fullbleed.has-parallax .hero-background {
-  transform: translate3d(0, var(--hero-parallax-offset, 0px), 0) scale(1.1);
+  transform: translate3d(0, var(--hero-parallax-offset, 0px), 0) scale(1.3);
   transform-origin: center center;
   will-change: transform;
 }
@@ -1356,6 +1384,6 @@ section[id] { scroll-margin-top: 96px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-fullbleed.has-parallax .hero-background { transform: scale(1.1); will-change: auto; }
+  .hero-fullbleed.has-parallax .hero-background { transform: scale(1.3); will-change: auto; }
   .lightbox-nav { transition: none; }
 }
